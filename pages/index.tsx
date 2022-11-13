@@ -65,8 +65,6 @@ export default function Home(props: HomeProps) {
                   onClick={() => {
                     if (description !== '') {
                       makeTodo(description)
-                    } else {
-                      cogoToast.error('Por favor adicione uma descrição para continuar')
                     }
                   }}
                 >
