@@ -11,9 +11,4 @@ export default async function handler(
     await createTodo(data)
     return res.status(200).json({message: 'Task criada com sucesso'})
   }
-
-  if(req.method === 'GET'){
-    const data = await getAllToDos()
-    return res.status(200).json({data})
-  }
 }

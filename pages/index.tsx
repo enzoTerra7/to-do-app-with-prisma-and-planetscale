@@ -20,7 +20,6 @@ export interface HomeProps {
 export default function Home(props: HomeProps) {
 
   const [description, setDescription] = useState('')
-  const [toDos, setToDos] = useState(props.toDo)
 
   const makeTodo = async (description: string) => {
     try {
@@ -36,14 +35,7 @@ export default function Home(props: HomeProps) {
   }
 
   return (
-    <div className=''>
-      <Head>
-        <title>To Do App</title>
-        <meta lang='pt-br' />
-        <meta name="description" content="To Do app with Prisma" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <div>
       <div className="h-full min-h-screen pb-5 bg-gray-500">
         <nav className="flex justify-center p-4 bg-gray-600">
           <h1 className="text-white text-2xl font-bold">Feedback Traversy Media</h1>
@@ -74,7 +66,7 @@ export default function Home(props: HomeProps) {
             </div>
           </form>
           <div>
-            {toDos?.map((toDo, index) => (
+            {props.toDo?.map((toDo, index) => (
               <div className="flex justify-center" key={toDo.id}>
                 <div className=" relative justify-center mt-6">
                   <div className="absolute flex top-0 right-0 p-3 space-x-1">
