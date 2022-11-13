@@ -1,4 +1,3 @@
-import cogoToast from 'cogo-toast'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
@@ -30,10 +29,9 @@ export default function Home(props: HomeProps) {
         body: JSON.stringify(description)
       }).then(() => {
         setDescription('')
-        cogoToast.success('To-do task adicionada com sucesso!')
       })
-    } catch (e: any) {
-      cogoToast.error(e?.response?.data?.error)
+    } catch (e) {
+      console.log(e)
     }
   }
 
